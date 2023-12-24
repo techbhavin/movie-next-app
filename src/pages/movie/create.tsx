@@ -1,6 +1,13 @@
 import { useFormik } from "formik";
 import React, { useState } from "react";
-import { Button, Container, Grid, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/dist/client/router";
@@ -73,115 +80,137 @@ const Home: React.FC = () => {
   });
 
   return (
-    <Container
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        position: "relative",
-        top: "10vw",
-      }}
-      component="main"
-      maxWidth="md"
-    >
-      <ToastContainer />
-      <Grid container spacing={20}>
-        <Grid item lg={6} xs={12}>
-          {base64Image?.length === 0 ? (
-            <div>
-              <label htmlFor="file-upload" className="">
-                <div className="dottedBorder">Drag & Upload</div>
-              </label>
+    <>
+      <div style={{ padding: "40px" }}>
+        <Box display="flex" justifyContent="space-between" padding="0 20px">
+          <Typography
+            display="flex"
+            alignItems="center"
+            color="#ffffff"
+            fontSize="42px"
+            gutterBottom
+            variant="h3"
+            component="div"
+          >
+            Create a new movie
+          </Typography>
+        </Box>
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            position: "relative",
+            top: "10vw",
+          }}
+          component="main"
+          maxWidth="md"
+        >
+          <ToastContainer />
+          <Grid container spacing={20}>
+            <Grid item lg={6} xs={12}>
+              {base64Image?.length === 0 ? (
+                <div>
+                  <label htmlFor="file-upload" className="">
+                    <div className="dottedBorder">Drag & Upload</div>
+                  </label>
 
-              <input
-                id="file-upload"
-                type="file"
-                defaultValue={base64Image}
-                src={base64Image ?? ""}
-                onChange={onHandleChange}
-                className="hidden"
-              />
-            </div>
-          ) : (
-            <div>
-              <img src={base64Image ?? ""} height={"400px"} width={"266px"} />
-            </div>
-          )}
-        </Grid>
-        <Grid item lg={6} xs={12}>
-          <div className="formContainer">
-            <form onSubmit={formik.handleSubmit}>
-              <TextField
-                margin="normal"
-                fullWidth
-                id="title"
-                label="Title"
-                name="name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-                error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
-                InputLabelProps={{ style: { color: "white" } }}
-                InputProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-              />
-              <TextField
-                sx={{ backgroundColor: "#224957" }}
-                margin="normal"
-                fullWidth
-                type="number"
-                id="publishingYear"
-                label="Publishing Year"
-                name="publishedYear"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.publishedYear}
-                error={
-                  formik.touched.publishedYear &&
-                  Boolean(formik.errors.publishedYear)
-                }
-                InputLabelProps={{ style: { color: "white" } }}
-                InputProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                helperText={
-                  formik.touched.publishedYear && formik.errors.publishedYear
-                }
-              />
-              <div style={{ display: "flex" }}>
-                <Button
-                  type="button"
-                  onClick={() => router.push("/")}
-                  variant="outlined"
-                  sx={{
-                    borderRadius: "10px",
-                  }}
-                >
-                  Cancel
-                </Button>
-                <Button
-                  sx={{
-                    marginLeft: "20px",
-                    borderRadius: "10px",
-                    backgroundColor: "#2BD17E",
-                  }}
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                >
-                  Submit
-                </Button>
+                  <input
+                    id="file-upload"
+                    type="file"
+                    defaultValue={base64Image}
+                    src={base64Image ?? ""}
+                    onChange={onHandleChange}
+                    className="hidden"
+                  />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    src={base64Image ?? ""}
+                    height={"400px"}
+                    width={"266px"}
+                  />
+                </div>
+              )}
+            </Grid>
+            <Grid item lg={6} xs={12}>
+              <div className="formContainer">
+                <form onSubmit={formik.handleSubmit}>
+                  <TextField
+                    margin="normal"
+                    fullWidth
+                    id="title"
+                    label="Title"
+                    name="name"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.name}
+                    error={formik.touched.name && Boolean(formik.errors.name)}
+                    helperText={formik.touched.name && formik.errors.name}
+                    InputLabelProps={{ style: { color: "white" } }}
+                    InputProps={{
+                      style: {
+                        color: "white",
+                      },
+                    }}
+                  />
+                  <TextField
+                    sx={{ backgroundColor: "#224957" }}
+                    margin="normal"
+                    fullWidth
+                    type="number"
+                    id="publishingYear"
+                    label="Publishing Year"
+                    name="publishedYear"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.publishedYear}
+                    error={
+                      formik.touched.publishedYear &&
+                      Boolean(formik.errors.publishedYear)
+                    }
+                    InputLabelProps={{ style: { color: "white" } }}
+                    InputProps={{
+                      style: {
+                        color: "white",
+                      },
+                    }}
+                    helperText={
+                      formik.touched.publishedYear &&
+                      formik.errors.publishedYear
+                    }
+                  />
+                  <div style={{ display: "flex" }}>
+                    <Button
+                      type="button"
+                      onClick={() => router.push("/")}
+                      variant="outlined"
+                      sx={{
+                        borderRadius: "10px",
+                      }}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      sx={{
+                        marginLeft: "20px",
+                        borderRadius: "10px",
+                        backgroundColor: "#2BD17E",
+                      }}
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
-        </Grid>
-      </Grid>
-    </Container>
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
+    </>
   );
 };
 
