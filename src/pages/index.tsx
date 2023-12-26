@@ -178,7 +178,12 @@ const HomePage = () => {
         </Grid>
       </div>
       <Stack
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#093545",
+        }}
         spacing={2}
         display="flex"
         color="#ffffff"

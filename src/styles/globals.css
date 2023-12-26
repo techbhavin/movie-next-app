@@ -3,12 +3,18 @@
   height: 100vw;
   width: 100%;
   position: relative;
+  @media (max-width: 426px) {
+    height: 100vw;
+  }
 }
 
 .bottom-image {
   position: absolute;
   bottom: 0;
   width: 100%;
+  @media (max-width: 426px) {
+    display: none;
+  }
 }
 
 .MuiPagination-ul {
