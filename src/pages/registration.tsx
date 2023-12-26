@@ -50,7 +50,7 @@ const Signup = () => {
         }
         router.push("/");
       } catch (error: any) {
-        toast("Something went wrong. Please try again");
+        toast(error.message ?? "Something went wrong. Please try again");
       }
     },
   });
