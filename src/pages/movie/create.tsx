@@ -151,6 +151,7 @@ const Home: React.FC = () => {
                     InputProps={{
                       style: {
                         color: "white",
+                        backgroundColor: "#224957",
                       },
                     }}
                   />

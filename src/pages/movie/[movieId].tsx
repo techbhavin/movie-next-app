@@ -165,6 +165,7 @@ const EditMovie: React.FC = () => {
                   InputProps={{
                     style: {
                       color: "white",
+                      backgroundColor: "#224957",
                     },
                   }}
                 />
@@ -185,6 +186,7 @@ const EditMovie: React.FC = () => {
                   InputProps={{
                     style: {
                       color: "white",
+                      backgroundColor: "#224957",
                     },
                   }}
                 />

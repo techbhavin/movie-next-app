@@ -95,6 +95,7 @@ const Sigin = () => {
           InputProps={{
             style: {
               color: "white",
+              backgroundColor: "#224957",
             },
           }}
         />
@@ -111,10 +112,10 @@ const Sigin = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           InputLabelProps={{ style: { color: "white" } }}
-          helperText={formik.touched.password && formik.errors.password}
           InputProps={{
             style: {
               color: "white",
+              backgroundColor: "#224957",
             },
           }}
         />

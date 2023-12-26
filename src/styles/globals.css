@@ -11,6 +11,23 @@
   width: 100%;
 }
 
+.MuiPagination-ul {
+  color: red;
+}
+
+.MuiButtonBase-root-MuiPaginationItem-root {
+  color: #ffffff !important;
+}
+
+.MuiPaginationItem-root.Mui-selected {
+  background-color: #2bd17e;
+  color: #ffffff;
+}
+
+.MuiPaginationItem-root {
+  color: #ffffff;
+}
+
 .container {
   display: flex;
   position: relative;
